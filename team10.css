@@ -1,0 +1,260 @@
+/* How variables are defined in CSS	*/
+:root {
+--bgcolor: #a0bbff;
+--buttonColor: #314882;
+--selectedColor: #e5e5e5;
+}
+
+body {
+	margin: 0px;
+	text-align: center;
+	background-color: var(--bgcolor);
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	font-size: 14pt;
+}
+
+h1 {
+	font-family: Impact, "Arial Black", Sans-serif;
+	font-size: 24pt;
+	background-color: white;
+	color: var(--bgcolor);
+	margin:0px;
+	border:0px;
+	padding:5px;
+}
+
+h2 {
+	font-family: Impact, "Arial Black", Sans-serif;
+	font-size: 24pt;
+	background-color: var(--bgcolor);
+	color: white;
+	text-decoration: underline;
+	margin-top: 5px;
+	margin-left: auto; 
+	margin-right: auto;
+	margin-bottom: 0px;
+}
+
+h3 {
+	font-family: Impact, "Arial Black", Sans-serif;
+	font-size: 24pt;
+	background-color: var(--bgcolor);
+	color: black;
+	margin-top: 5px;
+	margin-left: auto; 
+	margin-right: auto;
+	margin-bottom: 5px;
+}
+
+h4 {
+	font-family: Impact, "Arial Black", Sans-serif;
+	font-size: 20pt;
+	background-color: var(--bgcolor);
+	color: black;
+	margin-top: 5px;
+	margin-left: auto; 
+	margin-right: auto;
+	margin-bottom: 5px;
+}
+
+h5 {
+	font-family: "Trebuchet MS", "Helvetica", Sans-serif;
+	font-size: 20pt;
+	background-color: var(--bgcolor);
+	color: black;
+	margin-top: 5px;
+	margin-left: auto; 
+	margin-right: auto;
+	margin-bottom: 5px;
+}
+
+h6 {
+	font-family: "Trebuchet MS", "Helvetica", Sans-serif;
+	font-size: 18pt;
+	background-color: var(--bgcolor);
+	color: black;
+	margin-top: 5px;
+	margin-left: auto; 
+	margin-right: auto;
+	margin-bottom: 5px;
+}
+
+p {
+	margin-top: 5px;
+	margin-left: 30px;
+	margin-bottom: 5px;
+	text-align: center;
+}
+
+p input{
+	float:center;
+}
+
+table {
+	background-color: var(--bgcolor);
+	text-align: center;
+	padding: 0px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+table.center {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+td {
+	background: #a0bbff;
+	text-align: right;
+	padding: 5px; 
+	border: 0px;
+	margin: 0px;
+}
+
+thead {
+	padding:0px;
+	margin:0px;
+	border-bottom: 1px solid black; 
+}
+
+th {
+	padding: 5px;
+	margin:0px;
+	background-color: white;
+	border-bottom: 1px solid black;
+}
+
+table.left {
+	margin-left: 30px;
+	padding-left: 0px;
+}
+
+table.right {
+	margin-left: auto;
+	margin-right: 30px;
+	padding-right: 0px;
+	
+}
+
+/*	Paragraph style classes	*/
+.white {
+	background-color: var(--bgcolor);
+	color: white;
+	padding: 0px 0px 0px 0px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.black {
+	background-color: var(--bgcolor);
+	color: black;
+	padding: 0px 0px 0px 0px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.background-white{
+	background-color: white;
+	color: var(--bgcolor);
+	padding: 5px 0px 5px 30px;
+	margin-top: 0px;
+	margin-left: 0px;
+	margin-bottom: 0px;
+}
+
+.background-black{
+	background-color: black;
+	color: var(--bgcolor);
+	padding: 5px 0px 5px 30px;
+	margin-top: 0px;
+	margin-left: 0px;
+	margin-bottom: 0px;
+}
+
+.black-white {
+	background-color: white;
+	color: black;
+	padding: 5px 0px 5px 30px;
+	margin-top: 0px;
+	margin-left: 0px;
+	margin-bottom: 0px;
+}
+
+.white-black {
+	background-color: black;
+	color: white;
+	padding: 5px 0px 5px 30px;
+	margin-top: 0px;
+	margin-left: 0px;
+	margin-bottom: 0px;
+}
+
+/*	Alignment Classes */
+.left {
+	padding-left: 30px;
+	text-align: left;
+}
+
+.right {
+	padding-right: 30px; 
+	text-align: right;
+}
+
+.center {
+	padding-left: auto;
+	padding-right: auto;
+	text-align: center;
+}
+
+.input {
+	font-family: "Trebuchet MS", "Helvetica", "Sans-serif";
+	font-weight: bold;
+	display: inline-block;
+	float: left;
+}
+
+select {
+	color: var(--bgcolor);
+	background-color: white;
+}
+
+option {
+	color: var(--bgcolor);
+	background-color: white; 
+}
+
+/*	Style of submit/receive buttons	*/
+.button {
+	display: inline;
+	margin: 10px;
+	padding: 5px 10px 5px 10px;	
+	border: 1px solid gray;
+	background-color: white;
+	color: black;
+	border-radius:10%;
+}
+
+a.button {
+	text-decoration: none;
+}
+/* What buttons look like on mouse hover */
+.button:hover {
+	background-color: white;
+	color: var(--buttonColor);
+}
+
+/* What buttons look like on click	*/
+.button:active {
+	background-color: var(--selectedColor);
+	color: var(--buttonColor);
+}
+
+.container {
+  width: 500px;
+  clear: both;
+}
+
+
+
