@@ -13,27 +13,27 @@ require_once "config.php";
  
 // Define variables and initialize with empty values
 $username = $password = "";
-$username_err = $password_err = "";
+$login_error = "";
  
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
  
     // Check if username is empty
     if(empty(trim($_POST["username"]))){
-        $username_err = "Please enter username.";
+        $login_error = "</table><font color='red'>Please enter username and password.</font><table>";
     } else{
         $username = trim($_POST["username"]);
     }
     
     // Check if password is empty
     if(empty(trim($_POST["password"]))){
-        $password_err = "Please enter your password.";
+        $login_error = "</table><font color='red'>Please enter your username and password.</font><table>";
     } else{
         $password = trim($_POST["password"]);
     }
     
     // Validate credentials
-    if(empty($username_err) && empty($password_err)){
+    if(empty($login_error) && empty($login_error)){
         // Prepare a select statement
         $sql = "SELECT id, username, password FROM users WHERE username = ?";
         
@@ -67,12 +67,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             header("location: welcome.php");
                         } else{
                             // Display an error message if password is not valid
-                            $password_err = "The password you entered was not valid.";
+                            $login_error = "</table><font color='red'>The username or password you entered was not valid.</font><table>";
                         }
                     }
                 } else{
                     // Display an error message if username doesn't exist
-                    $username_err = "No account found with that username.";
+                    $login_error = "</table><font color='red'>The username or password you entered was not valid.</font><table>";
                 }
             } else{
                 echo "Oops! Something went wrong. Please try again later.";
@@ -93,7 +93,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <head>
     <meta charset="UTF-8">
     <title>Healthy Minds Patient Login</title>
-    <link rel ="stylesheet" type="text/css" href="team10.css">
+    <link rel ="stylesheet" type="text/css" href="healthymind.css">
     <style type="text/css">
 
     </style>
@@ -103,17 +103,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	<center><img src = "HM-Logo_wTag-RGB.jpg" alt = "" height="200" width="500" style></center>
         <h2>Login</h2>
         <p>Please fill in your credentials to login.</p>
-		<table class="box">
+		<table>
         <tr><td><form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-            <tr><td><div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
+            <tr><td><div class="form-group <?php echo (!empty($login_error)) ? 'has-error' : ''; ?>">
                 <label>Username</label>
-                <input type="text" name="username" class="form-control" value="<?php echo $username; ?>">
-                <span class="help-block"><?php echo $username_err; ?></span>
+                <input type="text" name="username"> <!-- class="form-control" value="<?php echo $username; ?>">
+                <span class="help-block"><?php echo $login_error; ?></span> -->
             </div>    
-            <tr><td><div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
+            <tr><td><div class="form-group <?php echo (!empty($login_error)) ? 'has-error' : ''; ?>">
                 <label>Password</label>
                 <input type="password" name="password" class="form-control">
-                <span class="help-block"><?php echo $password_err; ?></span>
+                <span class="help-block"><?php echo $login_error; ?></span>
             </div>
 			</table>
             <div class="form-group">

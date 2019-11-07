@@ -14,17 +14,18 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 <head>
     <meta charset="UTF-8">
     <title>Welcome</title>
-    <link rel ="stylesheet" type="text/css" href="team10.css">
+    <link rel ="stylesheet" type="text/css" href="healthymind.css">
     <style type="text/css">
-        body{ font: 14px sans-serif; text-align: center; }
     </style>
 </head>
 <body>
     <div class="page-header">
-        <h1>Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Welcome to our site.</h1>
+        <h1>Hello, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Welcome to your home page.</h1>
     </div>
-    <p>
-        <a href="logout.php" class="btn btn-danger">Logout</a>
-    </p>
+    <h3 align="left">Home Menu</h3>
+		<div class="vertical-menu">
+		<a href="reset-password.php">Reset password</a>
+		<a href="logout.php" class="btn btn-danger">Logout</a>
+		</div>  
 </body>
 </html>
